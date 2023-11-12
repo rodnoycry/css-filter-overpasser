@@ -1,0 +1,88 @@
+<style type="text/css">
+    /* Carousel */
+
+    /* New carousel */
+    div.slider-container > ul > li {
+        overflow: hidden;
+        border-radius: 14px;
+    }
+
+    /* Stuff */
+    #tm-top-a
+        > div:nth-child(1)
+        > div.uk-panel.uk-panel-box
+        > h3.uk-panel-title {
+        display: none !important;
+    }
+
+    #tm-top-a > div:nth-child(1) > div.uk-panel {
+        padding: 0 !important;
+        background: none !important;
+    }
+
+    #custom-carousel {
+        border-radius: 15px;
+        overflow: hidden !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Responsive inner text */
+    #custom-carousel div.custom-carousel-inner h2 {
+        font-weight: bold;
+        color: white;
+        max-width: 66%;
+        font-size: clamp(16px, 5vw, 30px);
+        line-height: clamp(20px, 8vw, 40px);
+        z-index: 2;
+    }
+
+    #custom-carousel div.custom-carousel-inner p {
+        max-width: 80%;
+        font-size: clamp(13px, 3.5vw, 14px);
+        line-height: clamp(12px, 4.5vw, 20px);
+        z-index: 2;
+    }
+
+    /* Background simplifying of carousel item */
+    #custom-carousel div.custom-carousel-inner {
+        width: 100%;
+        height: 360px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        display: flex;
+        flex-direction: column;
+        column-gap: 10px;
+        justify-content: flex-end;
+        color: white;
+        padding: 15px 50px 15px 25px;
+        position: relative;
+    }
+
+    #custom-carousel div.custom-carousel-inner::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0)
+        );
+        z-index: 1;
+    }
+
+    /* Layout fix */
+    @media (min-width: 768px) {
+        #tm-top-a > div:nth-child(1) {
+            width: 75% !important;
+        }
+
+        #tm-top-a > div:nth-child(2) {
+            width: 25% !important;
+        }
+    }
+</style>

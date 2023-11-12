@@ -1,24 +1,23 @@
 option: com_content
 layout: edit
-id: 497
-jform[title]: CSS: Main Content
-jform[alias]: css-main-content
-jform[catid]: 31
+id: 501
+jform[title]: CSS: Homepage
+jform[alias]: css-homepage
+jform[catid]: 32
 jform[state]: 1
 jform[access]: 1
 jform[featured]: 0
 jform[language]: *
 jform[version_note]: 
-jform[id]: 497
+jform[id]: 501
 jform[articletext]: 
 jform[created_by]: 985
 jform[created_by_alias]: 
 jform[created]: 01-11-2023 20:04:44
 jform[publish_up]: 01-11-2023 20:04:44
 jform[publish_down]: 
-jform[modified]: 12-11-2023 07:03:54
-jform[version]: 25
-jform[hits]: 72
+jform[modified]: 03-11-2023 05:10:58
+jform[version]: 6
 jform[attribs][article_layout]: 
 jform[attribs][show_title]: 0
 jform[attribs][link_titles]: 0

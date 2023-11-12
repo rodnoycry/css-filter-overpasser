@@ -1,24 +1,24 @@
 option: com_content
 layout: edit
-id: 497
-jform[title]: CSS: Main Content
-jform[alias]: css-main-content
+id: 520
+jform[title]: CSS: Search Page
+jform[alias]: css-search-page
 jform[catid]: 31
 jform[state]: 1
 jform[access]: 1
 jform[featured]: 0
 jform[language]: *
 jform[version_note]: 
-jform[id]: 497
+jform[id]: 520
 jform[articletext]: 
 jform[created_by]: 985
 jform[created_by_alias]: 
 jform[created]: 01-11-2023 20:04:44
 jform[publish_up]: 01-11-2023 20:04:44
 jform[publish_down]: 
-jform[modified]: 12-11-2023 07:03:54
-jform[version]: 25
-jform[hits]: 72
+jform[modified]: 02-11-2023 06:06:31
+jform[version]: 7
+jform[hits]: 5
 jform[attribs][article_layout]: 
 jform[attribs][show_title]: 0
 jform[attribs][link_titles]: 0

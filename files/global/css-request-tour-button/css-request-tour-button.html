@@ -1,0 +1,33 @@
+<style>
+    /* Request Tour Button */
+    a#tour-button {
+        display: flex;
+        justify-content: center;
+
+        border-radius: 16px;
+        background: #7f52ff;
+        padding: 12px 0px;
+        width: 100%;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        transition: box-shadow 0.3s ease;
+        text-decoration: none;
+    }
+
+    a#tour-button:hover {
+        box-shadow: 0px 0px 15px 0px rgba(127, 82, 255, 0.51);
+    }
+
+    aside.tm-sidebar-b div:has(a#tour-button) {
+        padding: 0 !important;
+    }
+
+    aside.tm-sidebar-b div:has(a#tour-button) > h3 {
+        display: none !important;
+    }
+
+    aside.tm-sidebar-b div:has(a#tour-button) > p {
+        margin-top: 0 !important;
+    }
+</style>

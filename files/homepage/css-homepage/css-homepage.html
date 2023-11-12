@@ -1,0 +1,80 @@
+<style type="text/css">
+    /* Homepage CSS */
+    #home-container {
+        margin-top: clamp(0px, 2vw, 30px);
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* Two equal columns */
+        grid-template-rows: auto;
+        /* Auto height for the row */
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        /* Add this line */
+    }
+
+    #home-content {
+        row-gap: 30px;
+        padding: 20px 0px;
+        height: 100%;
+        /* Add this line */
+    }
+
+    #home-content > h1 {
+        font-size: 35px;
+        font-family: "arial black", sans-serif;
+        font-weight: bold;
+        margin-top: 0;
+    }
+
+    #home-content > p {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    #home-button {
+        display: inline-block;
+        margin-top: clamp(30px, 7vw, 90px);
+
+        border-radius: 16px;
+        background: #7f52ff;
+        box-shadow: 0px 0px 35px 0px rgba(127, 82, 255, 0.51);
+        padding: 12px 40px;
+
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    #home-image {
+        height: 100%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    @media (max-width: 850px) {
+        #home-container {
+            grid-template-columns: 1fr;
+            /* Change to one column */
+            grid-template-rows: auto auto;
+            /* Two rows */
+        }
+
+        #home-image {
+            height: clamp(250px, 75vw, 500px);
+            grid-row: 1;
+            /* Place image in the first row */
+            grid-column: 1;
+            /* Place image in the first column */
+        }
+    }
+
+    @media (min-width: 1220px) {
+        #home-container {
+            grid-template-columns: 40% 60%;
+            /* Change to 40% and 60% */
+        }
+    }
+</style>
