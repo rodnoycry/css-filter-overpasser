@@ -1,67 +1,81 @@
 <style type="text/css">
-  /* Custom CSS */
+    /* Custom CSS */
 
-  /* Make titles bold */
-  article.uk-article > h1 {
-    font-size: 30px !important;
-    font-weight: bold;
-  }
+    html {
+        background: linear-gradient(
+            200.96deg,
+            #397a9e -29.09%,
+            #c5bab1 51.77%,
+            #8f8b9a 129.35%
+        );
+    }
 
-  /* Fix for :after element on main content overflowing body*/
-  body {
-    overflow-x: hidden;
-  }
+    /* Make titles bold */
+    article.uk-article > h1 {
+        font-size: 30px !important;
+        font-weight: bold;
+    }
 
-  /* Disable unnecessary margin of main content */
-  div.uk-grid {
-    margin-left: 0 !important;
-  }
+    /* Fix for :after element on main content overflowing body*/
 
-  /* Disable unnecessary padding of main content */
-  div.uk-grid > * {
-    padding-left: 0 !important;
-  }
+    /* body {
+        overflow-x: hidden;
+    } */
+    #tm-middle-container {
+        width: 100%;
+        overflow-x: hidden;
+    }
 
-  /* Main content */
-  #tm-middle {
-    min-height: 60vh;
-    position: relative !important;
-    padding-top: 30px !important;
-    padding-bottom: 100px !important;
-  }
+    /* Disable unnecessary margin of main content */
+    div.uk-grid {
+        margin-left: 0 !important;
+    }
 
-  /* Main content background element */
-  #tm-middle::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    height: 100%;
-    background-color: #ede9f6;
-    border-radius: 36px 36px 0 0;
-    /* Border radius for top corners */
-    z-index: -10;
-    /* To position behind the content */
-    align-self: center;
-  }
+    /* Disable unnecessary padding of main content */
+    div.uk-grid > * {
+        padding-left: 0 !important;
+    }
 
-  /* Global link color */
-  body a {
-    color: #4400ff;
-  }
+    /* Main content */
+    #tm-middle {
+        min-height: 60vh;
+        position: relative !important;
+        padding-top: 30px !important;
+        padding-bottom: 100px !important;
+    }
 
-  body a:hover {
-    color: #401ca4;
-  }
+    /* Main content background element */
+    #tm-middle::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        height: 100%;
+        background-color: #ede9f6;
+        border-radius: 36px 36px 0 0;
+        /* Border radius for top corners */
+        z-index: -10;
+        /* To position behind the content */
+        align-self: center;
+    }
 
-  /* Pagination */
-  .uk-pagination > li > a {
-    background-color: white !important;
-  }
+    /* Global link color */
+    body a {
+        color: #4400ff;
+    }
 
-  .uk-pagination > .uk-active > span {
-    background-color: #7f52ff !important;
-  }
+    body a:hover {
+        color: #401ca4;
+    }
+
+    /* Pagination */
+    .uk-pagination > li > a:not(#offcanvas *) {
+        background-color: white !important;
+    }
+
+    .uk-pagination > .uk-active > span {
+        background-color: #7f52ff !important;
+    }
 </style>

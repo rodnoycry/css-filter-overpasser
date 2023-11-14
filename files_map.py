@@ -41,6 +41,10 @@ FILES_MAP = {
         "payload": "files/global/css-search-page/css-search-page.payload",
     },
 
+    "js-overflow-fix": {
+        "html": "files/global/js-overflow-fix/js-overflow-fix.html",
+        "payload": "files/global/js-overflow-fix/js-overflow-fix.payload",
+    },
 
     # Homepage CSS
     "css-homepage": {

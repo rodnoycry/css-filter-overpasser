@@ -1,67 +1,67 @@
 <style type="text/css">
-  /* Custom CSS */
+    /* Custom CSS */
 
-  /* Make titles bold */
-  article.uk-article > h1 {
-    font-size: 30px !important;
-    font-weight: bold;
-  }
+    /* Make titles bold */
+    article.uk-article > h1 {
+        font-size: 30px !important;
+        font-weight: bold;
+    }
 
-  /* Fix for :after element on main content overflowing body*/
-  body {
-    overflow-x: hidden;
-  }
+    /* Fix for :after element on main content overflowing body*/
+    body {
+        overflow-x: hidden;
+    }
 
-  /* Disable unnecessary margin of main content */
-  div.uk-grid {
-    margin-left: 0 !important;
-  }
+    /* Disable unnecessary margin of main content */
+    div.uk-grid {
+        margin-left: 0 !important;
+    }
 
-  /* Disable unnecessary padding of main content */
-  div.uk-grid > * {
-    padding-left: 0 !important;
-  }
+    /* Disable unnecessary padding of main content */
+    div.uk-grid > * {
+        padding-left: 0 !important;
+    }
 
-  /* Main content */
-  #tm-middle {
-    min-height: 60vh;
-    position: relative !important;
-    padding-top: 30px !important;
-    padding-bottom: 100px !important;
-  }
+    /* Main content */
+    #tm-middle {
+        min-height: 60vh;
+        position: relative !important;
+        padding-top: 30px !important;
+        padding-bottom: 100px !important;
+    }
 
-  /* Main content background element */
-  #tm-middle::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    height: 100%;
-    background-color: #ede9f6;
-    border-radius: 36px 36px 0 0;
-    /* Border radius for top corners */
-    z-index: -10;
-    /* To position behind the content */
-    align-self: center;
-  }
+    /* Main content background element */
+    #tm-middle::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        height: 100%;
+        background-color: #ede9f6;
+        border-radius: 36px 36px 0 0;
+        /* Border radius for top corners */
+        z-index: -10;
+        /* To position behind the content */
+        align-self: center;
+    }
 
-  /* Global link color */
-  body a {
-    color: #4400ff;
-  }
+    /* Global link color */
+    body a {
+        color: #4400ff;
+    }
 
-  body a:hover {
-    color: #401ca4;
-  }
+    body a:hover {
+        color: #401ca4;
+    }
 
-  /* Pagination */
-  .uk-pagination > li > a {
-    background-color: white !important;
-  }
+    /* Pagination */
+    .uk-pagination > li > a:not(#offcanvas *) {
+        background-color: white !important;
+    }
 
-  .uk-pagination > .uk-active > span {
-    background-color: #7f52ff !important;
-  }
+    .uk-pagination > .uk-active > span {
+        background-color: #7f52ff !important;
+    }
 </style>

@@ -49,7 +49,7 @@ def make_post_request(url, headers, payload):
     response = requests.post(url, headers=headers, data=payload)
     return response.status_code
 
-def main(target_css_id):
+def main(target_css_id, token=None):
     files_dict = FILES_MAP[target_css_id]
     headers_file_path = 'headers.txt'
     payload_file_path = files_dict['payload']
@@ -59,14 +59,17 @@ def main(target_css_id):
     parsed_payload = parse_payload(payload_file_path)
 
     parsed_payload = modify_description(parsed_payload, update_file_path, is_article=True)
+    if token:
+        parsed_payload[token] = 1
 
     response_code = make_post_request(url, parsed_headers, parsed_payload)
     if response_code == 200:
-        print(f"\n{str(response_code)}: '{target_css_id}' updated successfully\n")
+        print(f"\n{str(response_code)}: '{target_css_id}' updated successfully (probably)\n")
     else:
         print(f"\n{str(response_code)}: '{target_css_id}' something went wrong on update\n")
 
 
 if __name__ == "__main__":
-    target_css_id = 'css-search-page'
-    main(target_css_id)
+    target_css_id = 'css-article'
+    token = ''
+    main(target_css_id, token)
