@@ -45,6 +45,14 @@ FILES_MAP = {
         "html": "files/global/js-overflow-fix/js-overflow-fix.html",
         "payload": "files/global/js-overflow-fix/js-overflow-fix.payload",
     },
+    "js-yt-embed-fix": {
+        "html": "files/global/js-yt-embed-fix/js-yt-embed-fix.html",
+        "payload": "files/global/js-yt-embed-fix/js-yt-embed-fix.payload",
+    },
+    "js-application-link-fix": {
+        "html": "files/global/js-application-link-fix/js-application-link-fix.html",
+        "payload": "files/global/js-application-link-fix/js-application-link-fix.payload",
+    },
 
     # Homepage CSS
     "css-homepage": {
@@ -60,5 +68,9 @@ FILES_MAP = {
     "css-article": {
         "html": "files/article/css-article/css-article.html",
         "payload": "files/article/css-article/css-article.payload",
+    },
+    "js-article-image-fix": {
+        "html": "files/article/js-article-image-fix/js-article-image-fix.html",
+        "payload": "files/article/js-article-image-fix/js-article-image-fix.payload",
     },
 }

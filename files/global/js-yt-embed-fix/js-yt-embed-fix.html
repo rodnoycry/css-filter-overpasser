@@ -1,0 +1,23 @@
+<div></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get all iframes on the page
+        var iframes = document.querySelectorAll("iframe");
+
+        // Loop through each iframe
+        iframes.forEach(function (iframe) {
+            // Check if the iframe source contains "youtu"
+            if (iframe.src.includes("youtu")) {
+                // Create a new div element
+                var wrapperDiv = document.createElement("div");
+
+                // Add the class "yt-embed" to the new div
+                wrapperDiv.className = "yt-embed";
+
+                // Wrap the iframe with the new div
+                iframe.parentNode.insertBefore(wrapperDiv, iframe);
+                wrapperDiv.appendChild(iframe);
+            }
+        });
+    });
+</script>

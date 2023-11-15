@@ -70,6 +70,6 @@ def main(target_css_id, token=None):
 
 
 if __name__ == "__main__":
-    target_css_id = 'css-article'
+    target_css_id = 'js-application-link-fix'
     token = ''
     main(target_css_id, token)

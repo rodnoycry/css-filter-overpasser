@@ -55,23 +55,15 @@
         }
     }
 
-    /* YT embed styles */
-    .yt-embed {
-        float: left;
-        position: relative;
-        width: 50%;
-        padding-bottom: 28.13%;
-        padding-top: 30px;
-        margin-right: 20px;
-        height: 0;
-        overflow: hidden;
-        border-radius: 10px;
+    /* Responsive container */
+    .responsive-container {
+        display: flex;
+        flex-direction: row;
     }
 
-    @media (max-width: 720px) {
-        .yt-embed {
-            padding-bottom: 56.25%;
-            width: 100%;
+    @media (max-width: 650px) {
+        .responsive-container {
+            flex-direction: column;
         }
     }
 </style>

@@ -1,0 +1,106 @@
+option: com_content
+layout: edit
+id: 525
+jform[title]: JS: YT Embed Fix
+jform[alias]: 
+jform[catid]: 31
+jform[state]: 1
+jform[access]: 1
+jform[featured]: 0
+jform[language]: *
+jform[version_note]: 
+jform[id]: 525
+jform[articletext]: 
+jform[created_by]: 985
+jform[created_by_alias]: 
+jform[created]: 14-11-2023 07:45:53
+jform[publish_up]: 14-11-2023 07:45:53
+jform[publish_down]: 
+jform[version]: 1
+jform[attribs][article_layout]: 
+jform[attribs][show_title]: 1
+jform[attribs][link_titles]: 
+jform[attribs][show_tags]: 0
+jform[attribs][show_intro]: 
+jform[attribs][info_block_position]: 
+jform[attribs][info_block_show_title]: 
+jform[attribs][show_category]: 
+jform[attribs][link_category]: 
+jform[attribs][show_parent_category]: 
+jform[attribs][link_parent_category]: 
+jform[attribs][show_associations]: 
+jform[attribs][show_author]: 
+jform[attribs][link_author]: 
+jform[attribs][show_create_date]: 
+jform[attribs][show_modify_date]: 
+jform[attribs][show_publish_date]: 
+jform[attribs][show_item_navigation]: 
+jform[attribs][show_icons]: 
+jform[attribs][show_print_icon]: 
+jform[attribs][show_email_icon]: 
+jform[attribs][show_vote]: 
+jform[attribs][show_hits]: 
+jform[attribs][show_noauth]: 
+jform[attribs][urls_position]: 
+jform[attribs][alternative_readmore]: 
+jform[attribs][article_page_title]: 
+jform[attribs][show_publishing_options]: 
+jform[attribs][show_article_options]: 
+jform[attribs][show_urls_images_backend]: 
+jform[attribs][show_urls_images_frontend]: 
+jform[images][image_intro]: 
+jform[images][float_intro]: 
+jform[images][image_intro_alt]: 
+jform[images][image_intro_caption]: 
+jform[images][image_fulltext]: 
+jform[images][float_fulltext]: 
+jform[images][image_fulltext_alt]: 
+jform[images][image_fulltext_caption]: 
+jform[urls][urla]: 
+jform[urls][urlatext]: 
+jform[urls][targeta]: 
+jform[urls][urlb]: 
+jform[urls][urlbtext]: 
+jform[urls][targetb]: 
+jform[urls][urlc]: 
+jform[urls][urlctext]: 
+jform[urls][targetc]: 
+jform[metadesc]: 
+jform[metakey]: 
+jform[xreference]: 
+jform[metadata][robots]: 
+jform[metadata][author]: 
+jform[metadata][rights]: 
+jform[metadata][xreference]: 
+jform[associations][ru-RU]: 
+jform[associations][en-GB]: 
+jform[rules][core.delete][1]: 
+jform[rules][core.edit][1]: 
+jform[rules][core.edit.state][1]: 
+jform[rules][core.delete][9]: 
+jform[rules][core.edit][9]: 
+jform[rules][core.edit.state][9]: 
+jform[rules][core.delete][6]: 
+jform[rules][core.edit][6]: 
+jform[rules][core.edit.state][6]: 
+jform[rules][core.delete][7]: 
+jform[rules][core.edit][7]: 
+jform[rules][core.edit.state][7]: 
+jform[rules][core.delete][2]: 
+jform[rules][core.edit][2]: 
+jform[rules][core.edit.state][2]: 
+jform[rules][core.delete][3]: 
+jform[rules][core.edit][3]: 
+jform[rules][core.edit.state][3]: 
+jform[rules][core.delete][4]: 
+jform[rules][core.edit][4]: 
+jform[rules][core.edit.state][4]: 
+jform[rules][core.delete][5]: 
+jform[rules][core.edit][5]: 
+jform[rules][core.edit.state][5]: 
+jform[rules][core.delete][8]: 
+jform[rules][core.edit][8]: 
+jform[rules][core.edit.state][8]: 
+task: article.apply
+return: 
+6463c3df5dbcb038d4f4865060008436: 1
