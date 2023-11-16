@@ -17,6 +17,10 @@
                 // Wrap the iframe with the new div
                 iframe.parentNode.insertBefore(wrapperDiv, iframe);
                 wrapperDiv.appendChild(iframe);
+
+                // Set the width and height of the iframe to 100%
+                iframe.style.width = "100%";
+                iframe.style.height = "100%";
             }
         });
     });

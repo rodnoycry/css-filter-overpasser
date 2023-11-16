@@ -1,0 +1,25 @@
+<div></div>
+<script>
+    // JS Article Image Fix
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get all images within the article with the specified classes
+        const articleImages = document.querySelectorAll("article img");
+
+        // Loop through each image
+        articleImages.forEach(function (image) {
+            // Get the parent article element
+            const article = image.closest("article");
+
+            // Calculate the percentage of width the image takes relative to the article width
+            const imageWidthPercentage =
+                (image.clientWidth / article.clientWidth) * 100;
+
+            // Check if the image takes more than 65% of the article width
+            if (imageWidthPercentage > 65) {
+                // Set the image width to 100%
+                image.style.width = "100%";
+            }
+        });
+    });
+</script>

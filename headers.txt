@@ -7,15 +7,15 @@ en-US,en;q=0.9
 Cache-Control:
 max-age=0
 Content-Length:
-3860
+3848
 Content-Type:
 application/x-www-form-urlencoded
 Cookie:
-session-cookie=179756c35131ba12cc2eb59e1e808458c61085d766435b6de32e7c49cc57a939ff7481635ee2f7d03f4f43628d068fb9; 23e010c4fd7ff72158f362f70028ca84=e8fe1fdb3e947b1c2633f6539aadeb44; c51979cc9f7648a6a0bbf279da1bf161=f3f90da65e4cfb736a5bdf58c8ef8990; jpanesliders_panel-sliders=0; jpanesliders_content-sliders-497=0; jpanesliders_permissions-sliders-497=0
+jpanesliders_panel-sliders=0; jpanesliders_content-sliders-497=0; jpanesliders_permissions-sliders-497=0; jpanesliders_module-sliders=0; jpanesliders_template-sliders-9=0; jpanesliders_content-sliders-=0; jpanesliders_permissions-sliders-=0; jpanesliders_permissions-sliders-524=0; jpanesliders_content-sliders-524=1; jpanesliders_content-sliders-499=0; jpanesliders_permissions-sliders-499=0; jpanesliders_content-sliders-503=0; jpanesliders_permissions-sliders-503=0; jpanesliders_permissions-sliders-121=0; jpanesliders_content-sliders-121=1; jpanesliders_permissions-sliders-13=0; jpanesliders_categories-sliders-13=0; jpanesliders_menu-sliders-533=0; jpanesliders_menu-sliders-534=3; jpanesliders_content-sliders-508=0; jpanesliders_permissions-sliders-508=0; jpanesliders_content-sliders-23=0; jpanesliders_permissions-sliders-23=0; jpanesliders_content-sliders-520=0; jpanesliders_permissions-sliders-520=0; jpanesliders_content-sliders-525=0; jpanesliders_permissions-sliders-525=0; jpanesliders_content-sliders-526=0; jpanesliders_permissions-sliders-526=0; session-cookie=1797b555830ec394fe2db59e1e8084584306cd3a7ef74b540cec0af263624413924c7b9893f5ba796acb1dc311f1cf1d; 23e010c4fd7ff72158f362f70028ca84=0355af5dfb5364e8dd030dde4e144d69; c51979cc9f7648a6a0bbf279da1bf161=9b2176cd2bd129da9eb0063a78f7832a; jpanesliders_permissions-sliders-481=0; jpanesliders_content-sliders-481=4; jpanesliders_menu-sliders-530=2; jpanesliders_content-sliders-527=0; jpanesliders_permissions-sliders-527=0
 Origin:
 https://phl.spbu.ru
 Referer:
-https://phl.spbu.ru/administrator/index.php?option=com_content&view=article&layout=edit&id=497
+https://phl.spbu.ru/administrator/index.php?option=com_content&view=article&layout=edit&id=527
 Sec-Ch-Ua:
 "Chromium";v="116", "Not)A;Brand";v="24", "Opera GX";v="102"
 Sec-Ch-Ua-Mobile:

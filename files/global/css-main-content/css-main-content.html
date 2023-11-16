@@ -83,21 +83,19 @@
     .yt-embed {
         float: left;
         position: relative;
-        /* width: 50%;
-        padding-bottom: 28.13%; */
-        padding-bottom: 56.25%;
         width: 100%;
-        padding-top: 30px;
+        aspect-ratio: 16/9;
         margin-right: 20px;
-        height: 0;
+        margin-bottom: 10px;
         overflow: hidden;
         border-radius: 10px;
     }
 
-    /* @media (max-width: 720px) {
-        .yt-embed {
-            padding-bottom: 56.25%;
-            width: 100%;
+    @media (min-width: 1220px) {
+        div.tm-leading-article article.uk-article .yt-embed {
+            width: 50%;
+            margin-right: 30px;
+            margin-bottom: 0px;
         }
-    } */
+    }
 </style>

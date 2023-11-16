@@ -49,8 +49,7 @@ def make_post_request(url, headers, payload):
     response = requests.post(url, headers=headers, data=payload)
     return response.status_code
 
-def main(target_css_id, token=None):
-    files_dict = FILES_MAP[target_css_id]
+def main(files_dict, token=None):
     headers_file_path = 'headers.txt'
     payload_file_path = files_dict['payload']
     update_file_path = files_dict['html']
@@ -64,12 +63,12 @@ def main(target_css_id, token=None):
 
     response_code = make_post_request(url, parsed_headers, parsed_payload)
     if response_code == 200:
-        print(f"\n{str(response_code)}: '{target_css_id}' updated successfully (probably)\n")
+        print(f"\n{str(response_code)}: '{'_'}' updated successfully (probably)\n")
     else:
-        print(f"\n{str(response_code)}: '{target_css_id}' something went wrong on update\n")
+        print(f"\n{str(response_code)}: '{'_'}' something went wrong on update\n")
 
 
 if __name__ == "__main__":
-    target_css_id = 'js-application-link-fix'
+    files_dict = FILES_MAP.css_category
     token = ''
-    main(target_css_id, token)
+    main(files_dict, token)
