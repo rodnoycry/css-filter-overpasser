@@ -1,25 +1,37 @@
 <div></div>
 <script>
-    // JS Article Image Fix
-
     document.addEventListener("DOMContentLoaded", function () {
-        // Get all images within the article with the specified classes
-        const articleImages = document.querySelectorAll("article img");
+        const maxWidthPercentage = 55;
+        // Function to check and adjust image and its parent link width
+        function checkAndAdjustWidth(element) {
+            const article = element.closest("article");
+            const elementWidthPercentage =
+                (element.clientWidth / article.clientWidth) * 100;
+            console.log({ element, elementWidthPercentage });
 
-        // Loop through each image
-        articleImages.forEach(function (image) {
-            // Get the parent article element
-            const article = image.closest("article");
+            if (elementWidthPercentage > maxWidthPercentage) {
+                // Set the element width to 100%
+                element.style.width = "100%";
 
-            // Calculate the percentage of width the image takes relative to the article width
-            const imageWidthPercentage =
-                (image.clientWidth / article.clientWidth) * 100;
-
-            // Check if the image takes more than 65% of the article width
-            if (imageWidthPercentage > 65) {
-                // Set the image width to 100%
-                image.style.width = "100%";
+                // If the element is a link, check and adjust its child img width
+                if (element.tagName === "A" && element.querySelector("img")) {
+                    const img = element.querySelector("img");
+                    img.style.width = "100%";
+                }
             }
+        }
+
+        // Check and adjust widths for images
+        const articleImages = document.querySelectorAll("article img");
+        articleImages.forEach(function (image) {
+            checkAndAdjustWidth(image);
+        });
+
+        // Check and adjust widths for links with img as direct child
+        const articleLinks = document.querySelectorAll("article a > img");
+        articleLinks.forEach(function (img) {
+            const link = img.parentElement;
+            checkAndAdjustWidth(link);
         });
     });
 </script>
