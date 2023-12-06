@@ -1,32 +1,31 @@
 option: com_content
 layout: edit
-id: 527
-jform[title]: JS: Article Image Fix
-jform[alias]: js-article-image-fix
-jform[catid]: 33
+id: 530
+jform[title]: JS + CSS: Pop Science
+jform[alias]: js-css-pop-science
+jform[catid]: 36
 jform[state]: 1
 jform[access]: 1
 jform[featured]: 0
 jform[language]: *
 jform[version_note]: 
-jform[id]: 527
+jform[id]: 530
 jform[articletext]: 
 jform[created_by]: 985
 jform[created_by_alias]: 
-jform[created]: 01-11-2023 20:04:44
-jform[publish_up]: 01-11-2023 20:04:44
+jform[created]: 23-11-2023 13:00:22
+jform[publish_up]: 23-11-2023 13:00:22
 jform[publish_down]: 
-jform[modified]: 16-11-2023 01:32:44
-jform[version]: 2
+jform[version]: 1
 jform[attribs][article_layout]: 
-jform[attribs][show_title]: 0
-jform[attribs][link_titles]: 0
-jform[attribs][show_tags]: 0
+jform[attribs][show_title]: 
+jform[attribs][link_titles]: 
+jform[attribs][show_tags]: 
 jform[attribs][show_intro]: 
 jform[attribs][info_block_position]: 
-jform[attribs][info_block_show_title]: 0
+jform[attribs][info_block_show_title]: 
 jform[attribs][show_category]: 
-jform[attribs][link_category]: 0
+jform[attribs][link_category]: 
 jform[attribs][show_parent_category]: 
 jform[attribs][link_parent_category]: 
 jform[attribs][show_associations]: 
@@ -34,7 +33,7 @@ jform[attribs][show_author]:
 jform[attribs][link_author]: 
 jform[attribs][show_create_date]: 
 jform[attribs][show_modify_date]: 
-jform[attribs][show_publish_date]: 0
+jform[attribs][show_publish_date]: 
 jform[attribs][show_item_navigation]: 
 jform[attribs][show_icons]: 
 jform[attribs][show_print_icon]: 

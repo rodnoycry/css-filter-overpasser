@@ -1,0 +1,37 @@
+<style type="text/css">
+    article > a.uk-align-left {
+        margin-right: 0 !important;
+    }
+
+    .centered-more-button-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    a.centered-more-button {
+        /* width: 100%;
+        text-align: center; */
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Find all anchor tags inside 'article > p'
+        var links = document.querySelectorAll("article > p > a");
+
+        // Iterate through the links
+        links.forEach(function (link) {
+            // Check if the text content matches "Подробнее..."
+            if (
+                link.textContent ===
+                "\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435..."
+            ) {
+                // Add a specific class or directly apply styles
+                link.classList.add("centered-more-button");
+                var parent = link.parentNode;
+                parent.classList.add("centered-more-button-container"); // Add a specific class
+                // Or apply styles directly: link.style.color = 'red'; link.style.fontWeight = 'bold'; ...
+            }
+        });
+    });
+</script>

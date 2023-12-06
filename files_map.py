@@ -73,3 +73,9 @@ class FILES_MAP:
         "html": "files/article/js-article-image-fix/js-article-image-fix.html",
         "payload": "files/article/js-article-image-fix/js-article-image-fix.payload",
     }
+
+    # Pop Science CSS
+    js_css_pop_science = {
+        "html": "files/pop-science/js-css-pop-science/js-css-pop-science.html",
+        "payload": "files/pop-science/js-css-pop-science/js-css-pop-science.payload",
+    }

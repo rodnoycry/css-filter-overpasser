@@ -69,6 +69,6 @@ def main(files_dict, token=None):
 
 
 if __name__ == "__main__":
-    files_dict = FILES_MAP.js_article_image_fix
+    files_dict = FILES_MAP.js_css_pop_science
     token = ''
     main(files_dict, token)

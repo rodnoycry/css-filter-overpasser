@@ -7,7 +7,6 @@
             const article = element.closest("article");
             const elementWidthPercentage =
                 (element.clientWidth / article.clientWidth) * 100;
-            console.log({ element, elementWidthPercentage });
 
             if (elementWidthPercentage > maxWidthPercentage) {
                 // Set the element width to 100%
