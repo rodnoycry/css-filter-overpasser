@@ -69,6 +69,6 @@ def main(files_dict, token=None):
 
 
 if __name__ == "__main__":
-    files_dict = FILES_MAP.js_css_pop_science
+    files_dict = FILES_MAP.js_carousel_links
     token = ''
     main(files_dict, token)

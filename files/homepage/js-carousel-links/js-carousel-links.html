@@ -1,0 +1,50 @@
+<div></div>
+<style>
+    .djslider-in > li {
+        cursor: pointer;
+    }
+</style>
+<script>
+    const imageLinkMap = {
+        "schedule.jpg": {
+            link: "https://phl.spbu.ru/novosti/671-7-28-dekabrya-2023-tsikl-lektsij-fizika-dlya-vsekh.html",
+            newTab: false,
+        },
+        "conference.jpg": {
+            link: "https://phl.spbu.ru/novosti/670-vserossijskaya-shkolnaya-konferentsiya-po-fizike-ff-conference-2023-fizicheskij-fakultet-spbgu.html",
+            newTab: false,
+        },
+        "application.jpg": {
+            link: "https://script.google.com/macros/s/AKfycbzHebmk8TyMAJAC-bc95r6RGr8Kl2ExPX1HQMAZPJI8ACF8k7gjnlvo0_0YJSAKnIU/exec",
+            newTab: true,
+        },
+        "youtube.jpg": {
+            link: "https://www.youtube.com/@Physic_spbu",
+            newTab: true,
+        },
+    };
+
+    function handleClick(event) {
+        if (event.target.tagName !== "IMG") return;
+        const imgElement = event.target;
+
+        if (!imgElement) return;
+        const imageName = imgElement.getAttribute("src");
+        const matchingKey = Object.keys(imageLinkMap).find((key) =>
+            imageName.includes(key)
+        );
+
+        if (!matchingKey) return;
+
+        const { link, newTab } = imageLinkMap[matchingKey];
+
+        if (newTab) {
+            window.open(link, "_blank");
+        } else {
+            window.location.href = link;
+        }
+    }
+
+    const slider = document.querySelector("ul.djslider-in");
+    slider.addEventListener("click", handleClick);
+</script>

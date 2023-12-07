@@ -54,7 +54,7 @@ class FILES_MAP:
         "payload": "files/global/js-application-link-fix/js-application-link-fix.payload",
     }
 
-    # Homepage CSS
+    # Homepage CSS and JS
     css_homepage = {
         "html": "files/homepage/css-homepage/css-homepage.html",
         "payload": "files/homepage/css-homepage/css-homepage.payload",
@@ -62,6 +62,10 @@ class FILES_MAP:
     css_news_module_home = {
         "html": "files/homepage/css-news-module-home/css-news-module-home.html",
         "payload": "files/homepage/css-news-module-home/css-news-module-home.payload",
+    }
+    js_carousel_links = {
+        "html": "files/homepage/js-carousel-links/js-carousel-links.html",
+        "payload": "files/homepage/js-carousel-links/js-carousel-links.payload",
     }
 
     # Article CSS
