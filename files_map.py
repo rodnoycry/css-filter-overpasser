@@ -40,6 +40,10 @@ class FILES_MAP:
         "html": "files/global/css-search-page/css-search-page.html",
         "payload": "files/global/css-search-page/css-search-page.payload",
     }
+    css_calendar = {
+        "html": "files/global/css-calendar/css-calendar.html",
+        "payload": "files/global/css-calendar/css-calendar.payload",
+    }
 
     js_overflow_fix = {
         "html": "files/global/js-overflow-fix/js-overflow-fix.html",
