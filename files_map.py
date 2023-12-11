@@ -87,3 +87,9 @@ class FILES_MAP:
         "html": "files/pop-science/js-css-pop-science/js-css-pop-science.html",
         "payload": "files/pop-science/js-css-pop-science/js-css-pop-science.payload",
     }
+
+    # Applications HTML
+    html_applications = {
+        "html": "files/applications/html-applications/html-applications.html",
+        "payload": "files/applications/html-applications/html-applications.payload"
+    }

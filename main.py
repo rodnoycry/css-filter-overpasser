@@ -69,6 +69,6 @@ def main(files_dict, token=None):
 
 
 if __name__ == "__main__":
-    files_dict = FILES_MAP.css_calendar
+    files_dict = FILES_MAP.html_applications
     token = ''
     main(files_dict, token)
