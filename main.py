@@ -1,4 +1,6 @@
 import requests
+import os
+import unicodedata
 from files_map import FILES_MAP
 
 
@@ -52,7 +54,7 @@ def make_post_request(url, headers, payload):
 def main(files_dict, token=None):
     headers_file_path = 'headers.txt'
     payload_file_path = files_dict['payload']
-    update_file_path = files_dict['html']
+    update_file_path = convert_cyrillic_to_unicode(files_dict['html'])
 
     parsed_headers = parse_headers(headers_file_path)
     parsed_payload = parse_payload(payload_file_path)
@@ -66,9 +68,37 @@ def main(files_dict, token=None):
         print(f"\n{str(response_code)}: '{'_'}' updated successfully (probably)\n")
     else:
         print(f"\n{str(response_code)}: '{'_'}' something went wrong on update\n")
+    os.remove(update_file_path)
+
+
+def convert_cyrillic_to_unicode(src_file_path):
+    # Ensure the source file exists
+    if not os.path.isfile(src_file_path):
+        raise FileNotFoundError(f"The file {src_file_path} does not exist.")
+
+    # Determine the directory and filename
+    directory, filename = os.path.split(src_file_path)
+    name, ext = os.path.splitext(filename)
+
+    # Create a new filename for the output
+    new_filename = f"{name}_converted{ext}"
+    new_file_path = os.path.join(directory, new_filename)
+
+    # Read the source file and convert Cyrillic characters to Unicode escape sequences
+    with open(src_file_path, 'r', encoding='utf-8') as src_file:
+        content = src_file.read()
+
+    # Convert Cyrillic to Unicode escape sequences
+    converted_content = ''.join([f"\\u{ord(char):04x}" if 0x0400 <= ord(char) <= 0x04FF or 0x0500 <= ord(char) <= 0x052F else char for char in content])
+
+    # Write the converted content to the new file
+    with open(new_file_path, 'w', encoding='utf-8') as new_file:
+        new_file.write(converted_content)
+
+    return new_file_path
 
 
 if __name__ == "__main__":
-    files_dict = FILES_MAP.html_applications
+    files_dict = FILES_MAP.js_css_applications
     token = ''
     main(files_dict, token)

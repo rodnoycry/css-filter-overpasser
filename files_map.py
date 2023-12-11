@@ -91,5 +91,9 @@ class FILES_MAP:
     # Applications HTML
     html_applications = {
         "html": "files/applications/html-applications/html-applications.html",
-        "payload": "files/applications/html-applications/html-applications.payload"
+        "payload": "files/applications/html-applications/html-applications.payload",
+    }
+    js_css_applications = {
+        "html": "files/applications/js-css-applications/js-css-applications.html",
+        "payload": "files/applications/js-css-applications/js-css-applications.payload",
     }
