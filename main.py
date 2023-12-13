@@ -99,6 +99,6 @@ def convert_cyrillic_to_unicode(src_file_path):
 
 
 if __name__ == "__main__":
-    files_dict = FILES_MAP.js_css_applications
+    files_dict = FILES_MAP.js_carousel_links
     token = ''
     main(files_dict, token)

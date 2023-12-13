@@ -1,5 +1,68 @@
-<div></div>
+<style type="text/css">
+    article.uk-article {
+        min-height: 1000px;
+    }
+
+    .custom-select {
+        display: block;
+        width: 100%;
+        padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='14' height='12' viewBox='0 0 14 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23333' stroke-width='2' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 0.65em auto, 100%;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        appearance: none;
+    }
+
+    .custom-select:focus {
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .blue-button {
+        display: inline-block;
+        margin-top: 10px;
+
+        border-radius: 16px;
+        border: none;
+        background: #7f52ff;
+        padding: 12px 40px;
+
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .blue-button:hover {
+        box-shadow: 0px 0px 15px 0px rgba(127, 82, 255, 0.51);
+    }
+</style>
 <script>
+    document.addEventListener("click", function (event) {
+        if (event.target && event.target.id === "tour-button") {
+            window.open(
+                "https://api.researchpark.ru/crm/form-tour.php?phys=true",
+                "_blank"
+            );
+        }
+    });
+    document.addEventListener("click", function (event) {
+        if (event.target && event.target.id === "class-button") {
+            window.open(
+                "https://script.google.com/macros/s/AKfycbzHebmk8TyMAJAC-bc95r6RGr8Kl2ExPX1HQMAZPJI8ACF8k7gjnlvo0_0YJSAKnIU/exec",
+                "_blank"
+            );
+        }
+    });
     document.addEventListener("DOMContentLoaded", function () {
         var agreementSelect = document.getElementById("agreementSelect");
         var yesOptions = document.getElementById("yesOptions");
@@ -19,15 +82,15 @@
           <li>До 6 визитов за семестр</li>
         </ul>
       
-        <select id="timeSelect">
-          <option value="">Нажмите, чтобы выбрать</option>
+        <select class="custom-select" id="timeSelect">
+          <option value="">Нажмите, чтобы выбрать длительность</option>
           <option value="2">2 часа</option>
           <option value="3">3 часа</option>
           <option value="4">4 часа</option>
           </select
         >
         <div id="timeOptions"></div>
-        <button>Записаться на занятия</button>
+        <button class="blue-button" id="class-button">Записаться на занятие</button>
         `;
                 yesOptions.style.display = "block";
                 document
@@ -36,17 +99,13 @@
             } else if (selectedValue === "no") {
                 noOptions.innerHTML = `
         <p>Группы не более 30 человек</p>
-        <select id="timeSelectNo">
-          <option value="">Нажмите, чтобы выбрать</option>
+        <select class="custom-select" id="timeSelectNo">
+          <option value="">Нажмите, чтобы выбрать длительность</option>
           <option value="1">1 час</option>
           <option value="2">2 часа</option>
         </select>
         <div id="timeOptionsNo"></div>
-        <button>Записаться на экскурсию</button>
-        <p>
-          По вопросам заключения соглашения с СПбГУ
-          
-        </p>
+        <button class="blue-button" id="tour-button">Записаться на экскурсию</button>
         `;
                 noOptions.style.display = "block";
                 document
@@ -59,25 +118,25 @@
             var timeOptions = document.getElementById("timeOptions");
             timeOptions.innerHTML = "";
             if (selectedTime === "2") {
-                timeOptions.innerHTML = `<select>
-          <option>Лекция с демонстрацией экспериментов (2 ч.)</option>
-          <option>Лабораторные работы (2 ч.)</option></select
+                timeOptions.innerHTML = `<ul>
+          <li>Лекция с демонстрацией экспериментов (2 ч.)</li>
+          <li>Лабораторные работы (2 ч.)</li></ul
         >`;
             } else if (selectedTime === "3") {
-                timeOptions.innerHTML = `<select>
-          <option>
+                timeOptions.innerHTML = `<ul>
+          <li>
             Лекция с демонстрацией экспериментов (1 ч.) + Лабораторные работы (2 ч.)
-          </option>
-          <option>Лабораторные работы (3 ч.)</option></select
+          </li>
+          <li>Лабораторные работы (3 ч.)</li></ul
         >`;
             } else if (selectedTime === "4") {
-                timeOptions.innerHTML = `<select>
-          <option>
+                timeOptions.innerHTML = `<ul>
+          <li>
             Лекция с демонстрацией экспериментов (2 ч.) + Лабораторные работы (2 ч.)
-          </option>
-          <option>
+          </li>
+          <li>
             Лекция с демонстрацией экспериментов (1 ч.) + Лабораторные работы (3 ч.)
-          </option></select
+          </li></ul
         >`;
             }
         }
