@@ -28,7 +28,6 @@
 
     .blue-button {
         display: inline-block;
-        margin-top: 10px;
 
         border-radius: 16px;
         border: none;
@@ -44,6 +43,40 @@
 
     .blue-button:hover {
         box-shadow: 0px 0px 15px 0px rgba(127, 82, 255, 0.51);
+    }
+
+    .alert {
+        padding: 0.75rem 1.25rem; /* Bootstrap-like padding */
+        margin-bottom: 1rem; /* Space below the alert */
+        border: 1px solid transparent; /* Transparent border to match Bootstrap's style */
+        border-radius: 0.25rem; /* Rounded corners */
+        position: relative; /* Position relative for optional close button */
+    }
+
+    .alert-warning {
+        color: #856404;
+        background-color: #fff3cd;
+        border-color: #ffeeba;
+    }
+
+    /* Outline Danger Button */
+    .btn-outline-danger {
+        padding: 0.375rem 0.35rem; /* Bootstrap-like padding */
+        font-size: 1rem; /* Default font size */
+        line-height: 1.5; /* Line height to match Bootstrap's */
+        border: 1px solid #dc3545; /* Red border */
+        color: #dc3545; /* Red text */
+        background-color: transparent; /* Transparent background */
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+            border-color 0.15s ease-in-out; /* Smooth transition for hover effects */
+        border-radius: 5px;
+    }
+
+    .btn-outline-danger:hover {
+        color: #fff; /* White text on hover */
+        background-color: #dc3545; /* Red background on hover */
+        border-color: #dc3545; /* Red border on hover */
+        text-decoration: none;
     }
 </style>
 <script>
@@ -67,53 +100,62 @@
         var agreementSelect = document.getElementById("agreementSelect");
         var yesOptions = document.getElementById("yesOptions");
         var noOptions = document.getElementById("noOptions");
+        function getFinalPart(id) {
+            return `
+                <div class="alert alert-warning" role="alert">
+                    Перед заполнением заявки не забудьте посмотреть&nbsp;
+                    <a class="btn-outline-danger" href="https://phl.spbu.ru/calendar.html" target="_blank">свободные даты в Календаре</a>
+                </div>
+                <button class="blue-button" id="${id}">Записаться на занятие</button>
+            `;
+        }
         agreementSelect.addEventListener("change", function () {
             var selectedValue = this.value;
             yesOptions.style.display = "none";
             noOptions.style.display = "none";
             if (selectedValue === "yes") {
                 yesOptions.innerHTML = `
-        <ul>
-          <li>Группы не более 24 человек</li>
-          <li>
-            Входное тестирование (мы работаем с заинтересованными школьниками высокого
-            уровня предварительной подготовки!)
-          </li>
-          <li>До 6 визитов за семестр</li>
-        </ul>
-      
-        <select class="custom-select" id="timeSelect">
-          <option value="">Нажмите, чтобы выбрать длительность</option>
-          <option value="2">2 часа</option>
-          <option value="3">3 часа</option>
-          <option value="4">4 часа</option>
-          </select
-        >
-        <div id="timeOptions"></div>
-        <button class="blue-button" id="class-button">Записаться на занятие</button>
-        `;
+                    <ul>
+                        <li>Группы не более 24 человек</li>
+                        <li>
+                            Входное тестирование (мы работаем с заинтересованными школьниками высокого
+                            уровня предварительной подготовки!)
+                        </li>
+                        <li>До 6 визитов за семестр</li>
+                    </ul>
+                
+                    <select class="custom-select" id="timeSelect">
+                        <option value="">Нажмите, чтобы выбрать длительность</option>
+                        <option value="2">2 часа</option>
+                        <option value="3">3 часа</option>
+                        <option value="4">4 часа</option>
+                    </select
+                    >
+                    <div id="timeOptions"></div>
+                    ${getFinalPart("class-button")}
+                `;
                 yesOptions.style.display = "block";
                 document
                     .getElementById("timeSelect")
-                    .addEventListener("change", handleTimeSelect);
+                    .addEventListener("change", handleTimeSelectYes);
             } else if (selectedValue === "no") {
                 noOptions.innerHTML = `
-        <p>Группы не более 30 человек</p>
-        <select class="custom-select" id="timeSelectNo">
-          <option value="">Нажмите, чтобы выбрать длительность</option>
-          <option value="1">1 час</option>
-          <option value="2">2 часа</option>
-        </select>
-        <div id="timeOptionsNo"></div>
-        <button class="blue-button" id="tour-button">Записаться на экскурсию</button>
-        `;
+                    <div id="studentsAmountNo"></div>
+                    <select class="custom-select" id="timeSelectNo">
+                        <option value="">Нажмите, чтобы выбрать длительность</option>
+                        <option value="1">1 час</option>
+                        <option value="2">2 часа</option>
+                    </select>
+                    <div id="timeOptionsNo"></div>
+                    ${getFinalPart("tour-button")}
+                `;
                 noOptions.style.display = "block";
                 document
                     .getElementById("timeSelectNo")
                     .addEventListener("change", handleTimeSelectNo);
             }
         });
-        function handleTimeSelect() {
+        function handleTimeSelectYes() {
             var selectedTime = this.value;
             var timeOptions = document.getElementById("timeOptions");
             timeOptions.innerHTML = "";
@@ -143,6 +185,7 @@
         function handleTimeSelectNo() {
             var selectedTime = this.value;
             var timeOptionsNo = document.getElementById("timeOptionsNo");
+            var studentsAmountNo = document.getElementById("studentsAmountNo");
             timeOptionsNo.innerHTML = "";
             if (selectedTime === "1") {
                 timeOptionsNo.innerHTML = `
@@ -150,6 +193,7 @@
           <li>Экскурсия по образовательному центру - лабораторные установки</li>
         </ul>
         `;
+                studentsAmountNo.innerHTML = `<p>Группы не более <strong>20</strong> человек</p>`;
             } else if (selectedTime === "2") {
                 timeOptionsNo.innerHTML = `
         <ul>
@@ -157,6 +201,7 @@
           <li>Экскурсия по образовательному центру - лабораторные установки</li>
         </ul>
         `;
+                studentsAmountNo.innerHTML = `<p>Группы не более <strong>40</strong> человек</p>`;
             }
         }
     });

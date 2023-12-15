@@ -16,7 +16,8 @@ jform[created_by_alias]:
 jform[created]: 06-12-2023 19:32:38
 jform[publish_up]: 06-12-2023 19:32:38
 jform[publish_down]: 
-jform[version]: 1
+jform[modified]: 13-12-2023 04:02:30
+jform[version]: 17
 jform[attribs][article_layout]: 
 jform[attribs][show_title]: 
 jform[attribs][link_titles]: 
@@ -103,4 +104,4 @@ jform[rules][core.edit][8]:
 jform[rules][core.edit.state][8]: 
 task: article.apply
 return: 
-f1a65e35f788fd3bf29dcf15495741fa: 1
+1cdb865565947f58be73cff01d249873: 1
