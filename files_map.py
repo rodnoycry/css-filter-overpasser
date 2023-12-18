@@ -81,6 +81,10 @@ class FILES_MAP:
         "html": "files/article/js-article-image-fix/js-article-image-fix.html",
         "payload": "files/article/js-article-image-fix/js-article-image-fix.payload",
     }
+    js_css_tags = {
+        "html": "files/article/js-css-tags/js-css-tags.html",
+        "payload": "files/article/js-css-tags/js-css-tags.payload",
+    }
 
     # Pop Science CSS
     js_css_pop_science = {

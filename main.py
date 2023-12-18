@@ -1,6 +1,5 @@
 import requests
 import os
-import unicodedata
 from files_map import FILES_MAP
 
 

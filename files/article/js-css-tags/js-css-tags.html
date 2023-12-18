@@ -1,0 +1,155 @@
+<style type="text/css">
+    :root {
+        --color-royal-blue: rgba(65, 105, 225, 1);
+        --color-royal-blue-transparent: rgba(65, 105, 225, 0.2);
+        --color-coral: rgba(255, 127, 80, 1);
+        --color-coral-transparent: rgba(255, 127, 80, 0.2);
+        --color-sea-green: rgb(11, 167, 42);
+        --color-sea-green-transparent: rgba(11, 167, 42, 0.2);
+        --color-violet: rgba(238, 130, 238, 1);
+        --color-violet-transparent: rgba(238, 130, 238, 0.2);
+        --color-tomato: rgba(255, 99, 71, 1);
+        --color-tomato-transparent: rgba(255, 99, 71, 0.2);
+        --color-orchid: rgba(218, 112, 214, 1);
+        --color-orchid-transparent: rgba(218, 112, 214, 0.2);
+        --color-olive: rgb(224, 190, 0);
+        --color-olive-transparent: rgba(224, 190, 0, 0.2);
+        --color-dodger-blue: rgba(30, 144, 255, 1);
+        --color-dodger-blue-transparent: rgba(30, 144, 255, 0.2);
+        --color-firebrick: rgba(178, 34, 34, 1);
+        --color-firebrick-transparent: rgba(178, 34, 34, 0.2);
+    }
+
+    .tag {
+        display: inline-block;
+        padding: 0.25em 0.4em;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 100px;
+        border-width: 1px;
+        border-style: solid;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+            border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        padding-right: 0.6em;
+        padding-left: 0.6em;
+        border-radius: 10rem;
+        margin: 3px 5px;
+        cursor: default;
+    }
+
+    .tag-royal-blue {
+        color: var(--color-royal-blue);
+        border-color: var(--color-royal-blue);
+        background-color: var(--color-royal-blue-transparent);
+    }
+
+    .tag-coral {
+        color: var(--color-coral);
+        border-color: var(--color-coral);
+        background-color: var(--color-coral-transparent);
+    }
+
+    .tag-sea-green {
+        color: var(--color-sea-green);
+        border-color: var(--color-sea-green);
+        background-color: var(--color-sea-green-transparent);
+    }
+
+    .tag-violet {
+        color: var(--color-violet);
+        border-color: var(--color-violet);
+        background-color: var(--color-violet-transparent);
+    }
+
+    .tag-tomato {
+        color: var(--color-tomato);
+        border-color: var(--color-tomato);
+        background-color: var(--color-tomato-transparent);
+    }
+
+    .tag-orchid {
+        color: var(--color-orchid);
+        border-color: var(--color-orchid);
+        background-color: var(--color-orchid-transparent);
+    }
+
+    .tag-olive {
+        color: var(--color-olive);
+        border-color: var(--color-olive);
+        background-color: var(--color-olive-transparent);
+    }
+
+    .tag-dodger-blue {
+        color: var(--color-dodger-blue);
+        border-color: var(--color-dodger-blue);
+        background-color: var(--color-dodger-blue-transparent);
+    }
+
+    .tag-firebrick {
+        color: var(--color-firebrick);
+        border-color: var(--color-firebrick);
+        background-color: var(--color-firebrick-transparent);
+    }
+</style>
+<script>
+    const tagClassMap = {
+        // Classes
+        "8 класс": "tag-royal-blue",
+        "9 класс": "tag-tomato",
+        "10 класс": "tag-tomato",
+        "11 класс": "tag-violet",
+        // Semestr
+        "весна": "tag-sea-green",
+        "осень": "tag-coral",
+        // Format
+        "онлайн": "tag-orchid",
+        "оффлайн": "tag-olive",
+        // Section
+        "механика": "tag-dodger-blue",
+        "термодинамика и молекулярная физкиа": "tag-firebrick",
+        "электрические и магнитные явления": "tag-royal-blue",
+        "оптика": "tag-violet",
+        "повышенная сложность": "tag-tomato",
+    };
+    document.addEventListener("DOMContentLoaded", function () {
+        // Function to create a new span element with the appropriate classes and text
+        function createTagSpan(text) {
+            const span = document.createElement("span");
+            span.className = `tag ${tagClassMap[text]}`;
+            span.textContent = text.replace(/\s/g, "\u00A0"); // Replace spaces with non-breaking spaces
+            return span;
+        }
+
+        // Get all article elements
+        const articles = document.querySelectorAll("article");
+
+        // Iterate over each article
+        articles.forEach((article) => {
+            let tagsAdded = false;
+            const tagsContainer = document.createElement("div");
+            tagsContainer.className = "tags-container";
+
+            // Check each direct child p element of the article
+            const children = article.querySelectorAll(
+                'p > span[style*="background-color"]'
+            );
+            children.forEach((child) => {
+                const text = child.textContent.trim().toLowerCase();
+                // Check if the text is a key in the tagClassMap
+                if (tagClassMap.hasOwnProperty(text)) {
+                    // Add a tag span to the tags container
+                    tagsContainer.appendChild(createTagSpan(text));
+                    // Remove the p element that contains the matching span
+                    child.parentElement.remove();
+                    tagsAdded = true;
+                }
+            });
+
+            // If at least one tag was added, append the tags container to the article
+            if (tagsAdded) {
+                article.appendChild(tagsContainer);
+            }
+        });
+    });
+</script>
