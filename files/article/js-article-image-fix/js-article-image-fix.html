@@ -1,4 +1,34 @@
-<div></div>
+<style type="text/css">
+    /* Default styles for all screen sizes */
+    article > a:first-child:has(img),
+    article > a:nth-child(2):has(img) {
+        /* Default styles here */
+    }
+
+    /* Media query for large screens (1000px and above) */
+    @media only screen and (min-width: 1000px) {
+        article > a:first-child:has(img),
+        article > a:nth-child(2):has(img),
+        article > img:first-child,
+        article > img:nth-child(2),
+        .pg-msnr-container > div {
+            max-width: 40%;
+            margin-right: 20px;
+        }
+    }
+
+    /* Media query for medium screens (720px - 1000px) */
+    @media only screen and (min-width: 720px) and (max-width: 999px) {
+        article > a:first-child:has(img),
+        article > a:nth-child(2):has(img),
+        article > img:first-child,
+        article > img:nth-child(2),
+        .pg-msnr-container > div {
+            max-width: 50%;
+            margin-right: 20px;
+        }
+    }
+</style>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const maxWidthPercentage = 55;

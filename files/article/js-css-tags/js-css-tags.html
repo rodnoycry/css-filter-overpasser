@@ -20,7 +20,99 @@
         --color-firebrick-transparent: rgba(178, 34, 34, 0.2);
     }
 
-    .tag {
+    .tag-royal-blue,
+    .tag-8-grade,
+    .tag-electromagnetism {
+        color: var(--color-royal-blue);
+        border-color: var(--color-royal-blue);
+        background-color: var(--color-royal-blue-transparent);
+    }
+
+    .tag-coral,
+    .tag-fall {
+        color: var(--color-coral);
+        border-color: var(--color-coral);
+        background-color: var(--color-coral-transparent);
+    }
+
+    .tag-sea-green,
+    .tag-spring {
+        color: var(--color-sea-green);
+        border-color: var(--color-sea-green);
+        background-color: var(--color-sea-green-transparent);
+    }
+
+    .tag-violet,
+    .tag-11-grade,
+    .tag-optics {
+        color: var(--color-violet);
+        border-color: var(--color-violet);
+        background-color: var(--color-violet-transparent);
+    }
+
+    .tag-tomato,
+    .tag-9-grade,
+    .tag-increased-difficulty {
+        color: var(--color-tomato);
+        border-color: var(--color-tomato);
+        background-color: var(--color-tomato-transparent);
+    }
+
+    .tag-orchid,
+    .tag-online {
+        color: var(--color-orchid);
+        border-color: var(--color-orchid);
+        background-color: var(--color-orchid-transparent);
+    }
+
+    .tag-olive,
+    .tag-10-grade {
+        color: var(--color-olive);
+        border-color: var(--color-olive);
+        background-color: var(--color-olive-transparent);
+    }
+
+    .tag-dodger-blue,
+    .tag-mechanics {
+        color: var(--color-dodger-blue);
+        border-color: var(--color-dodger-blue);
+        background-color: var(--color-dodger-blue-transparent);
+    }
+
+    .tag-firebrick,
+    .tag-thermodynamics {
+        color: var(--color-firebrick);
+        border-color: var(--color-firebrick);
+        background-color: var(--color-firebrick-transparent);
+    }
+
+    /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+    /* colors */
+    .tag-royal-blue,
+    .tag-coral,
+    .tag-sea-green,
+    .tag-violet,
+    .tag-tomato,
+    .tag-orchid,
+    .tag-olive,
+    .tag-dodger-blue,
+    .tag-firebrick,
+    /* grades */
+    .tag-8-grade,
+    .tag-9-grade,
+    .tag-10-grade,
+    .tag-11-grade,
+    /* semestres */
+    .tag-fall,
+    .tag-spring,
+    /* formats */
+    .tag-online,
+    /* physics sections */
+    .tag-mechanics,
+    .tag-thermodynamics,
+    .tag-electromagnetism,
+    .tag-optics,
+    .tag-increased-difficulty {
         display: inline-block;
         padding: 0.25em 0.4em;
         text-align: center;
@@ -37,86 +129,31 @@
         margin: 3px 5px;
         cursor: default;
     }
-
-    .tag-royal-blue {
-        color: var(--color-royal-blue);
-        border-color: var(--color-royal-blue);
-        background-color: var(--color-royal-blue-transparent);
-    }
-
-    .tag-coral {
-        color: var(--color-coral);
-        border-color: var(--color-coral);
-        background-color: var(--color-coral-transparent);
-    }
-
-    .tag-sea-green {
-        color: var(--color-sea-green);
-        border-color: var(--color-sea-green);
-        background-color: var(--color-sea-green-transparent);
-    }
-
-    .tag-violet {
-        color: var(--color-violet);
-        border-color: var(--color-violet);
-        background-color: var(--color-violet-transparent);
-    }
-
-    .tag-tomato {
-        color: var(--color-tomato);
-        border-color: var(--color-tomato);
-        background-color: var(--color-tomato-transparent);
-    }
-
-    .tag-orchid {
-        color: var(--color-orchid);
-        border-color: var(--color-orchid);
-        background-color: var(--color-orchid-transparent);
-    }
-
-    .tag-olive {
-        color: var(--color-olive);
-        border-color: var(--color-olive);
-        background-color: var(--color-olive-transparent);
-    }
-
-    .tag-dodger-blue {
-        color: var(--color-dodger-blue);
-        border-color: var(--color-dodger-blue);
-        background-color: var(--color-dodger-blue-transparent);
-    }
-
-    .tag-firebrick {
-        color: var(--color-firebrick);
-        border-color: var(--color-firebrick);
-        background-color: var(--color-firebrick-transparent);
-    }
 </style>
 <script>
     const tagClassMap = {
         // Classes
-        "8 класс": "tag-royal-blue",
-        "9 класс": "tag-tomato",
-        "10 класс": "tag-tomato",
-        "11 класс": "tag-violet",
+        "8 класс": "tag-royal-blue", //
+        "9 класс": "tag-tomato", //
+        "10 класс": "tag-dodger-blue", //
+        "11 класс": "tag-violet", //
         // Semestr
-        "весна": "tag-sea-green",
-        "осень": "tag-coral",
+        "весна": "tag-sea-green", //
+        "осень": "tag-coral", //
         // Format
-        "онлайн": "tag-orchid",
-        "оффлайн": "tag-olive",
+        "онлайн": "tag-orchid", //
         // Section
-        "механика": "tag-dodger-blue",
-        "термодинамика и молекулярная физкиа": "tag-firebrick",
-        "электрические и магнитные явления": "tag-royal-blue",
-        "оптика": "tag-violet",
-        "повышенная сложность": "tag-tomato",
+        "механика": "tag-dodger-blue", //
+        "термодинамика": "tag-firebrick",
+        "электромагнетизм": "tag-royal-blue", //
+        "оптика": "tag-violet", //
+        "повышенная сложность": "tag-tomato", //
     };
     document.addEventListener("DOMContentLoaded", function () {
         // Function to create a new span element with the appropriate classes and text
         function createTagSpan(text) {
             const span = document.createElement("span");
-            span.className = `tag ${tagClassMap[text]}`;
+            span.className = tagClassMap[text];
             span.textContent = text.replace(/\s/g, "\u00A0"); // Replace spaces with non-breaking spaces
             return span;
         }
@@ -153,3 +190,25 @@
         });
     });
 </script>
+
+<!-- 
+- Классы:
+8 класс: <span class="tag-8-grade">8 класс</span>
+9 класс: <span class="tag-9-grade">9 класс</span>
+10 класс: <span class="tag-10-grade">10 класс</span>
+11 класс: <span class="tag-11-grade">11 класс</span>
+
+- Cеместры:
+весна: <span class="tag-spring">весна</span>
+осень: <span class="tag-fall">осень</span>
+
+- Формат:
+онлайн: <span class="tag-online">онлайн</span>
+
+- Раздел физики:
+механика: <span class="tag-mechanics">механика</span>
+термодинамика: <span class="tag-thermodynamics">термодинамика</span>
+электромагнетизм: <span class="tag-electromagnetism">электромагнетизм</span>
+оптика: <span class="tag-optics">оптика</span>
+повышенная сложность: <span class="tag-increased-difficulty">повышенная сложность</span>
+-->
