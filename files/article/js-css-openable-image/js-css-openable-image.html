@@ -1,0 +1,137 @@
+<!-- js-css-openable-image -->
+<style>
+    /* Style for the full-view overlay */
+    #fullViewOverlay {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1000;
+        /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        transition: 0.3s;
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        /* Black w/ opacity */
+    }
+
+    /* Style for the full-view image */
+    #fullViewImage {
+        display: block;
+        margin: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-height: calc(100vh - 150px);
+        max-width: calc(100vw - 50px);
+        min-width: 400px;
+    }
+
+    /* Style for the close button */
+    #closeBtn {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #bbb;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    #closeBtn:hover,
+    #closeBtn:focus {
+        color: #f1f1f1;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .openable-image {
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
+    /* Media query for large screens (1000px and above) */
+    @media only screen and (min-width: 1000px) {
+        .openable-image {
+            max-width: 40%;
+            margin-right: 20px;
+        }
+    }
+
+    /* Media query for medium screens (720px - 1000px) */
+    @media only screen and (min-width: 720px) and (max-width: 999px) {
+        .openable-image {
+            max-width: 50%;
+            margin-right: 20px;
+        }
+    }
+</style>
+<!-- Script -->
+<script>
+    var fullViewOverlay = document.createElement("div");
+    fullViewOverlay.id = "fullViewOverlay";
+    fullViewOverlay.style.display = "none";
+
+    // Create the span element for the close button
+    var closeBtn = document.createElement("span");
+    closeBtn.id = "closeBtn";
+    closeBtn.textContent = "\u00D7"; // or you can use closeBtn.innerHTML = 'x';
+
+    // Create the img element
+    var fullViewImage = document.createElement("img");
+    fullViewImage.id = "fullViewImage";
+    fullViewImage.src = "";
+
+    // Append the close button and image to the overlay div
+    fullViewOverlay.appendChild(closeBtn);
+    fullViewOverlay.appendChild(fullViewImage);
+
+    // Append the overlay div to the body
+    document.body.appendChild(fullViewOverlay);
+
+    function openFullView(src) {
+        var fullViewImage = document.getElementById("fullViewImage");
+        if (fullViewImage) {
+            fullViewImage.src = src;
+            document.getElementById("fullViewOverlay").style.display = "block";
+            document.getElementById("fullViewOverlay").style.opacity = "1";
+        } else {
+            console.error("The #fullViewImage element does not exist.");
+        }
+    }
+
+    // Add click event to images with the 'openable-image' class
+    // var images = document.getElementsByClassName("openable-image");
+    // for (var i = 0; i < images.length; i++) {
+    //     images[i].onclick = function () {
+    //         openFullView(this.src);
+    //     };
+    // }
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("openable-image")) {
+            openFullView(event.target.src);
+        }
+    });
+
+    // Click on the close button to close the full-view mode
+    document.getElementById("closeBtn").onclick = function () {
+        document.getElementById("fullViewOverlay").style.display = "none";
+        document.getElementById("fullViewOverlay").style.opacity = "0";
+    };
+
+    // Click outside the image to close the full-view mode
+    window.onclick = function (event) {
+        if (event.target == document.getElementById("fullViewOverlay")) {
+            document.getElementById("fullViewOverlay").style.display = "none";
+            document.getElementById("fullViewOverlay").style.opacity = "0";
+        }
+    };
+</script>
